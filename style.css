@@ -147,7 +147,6 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* border: 1px solid red; */
 }
 .info{
     margin-top: 3rem;
@@ -419,14 +418,12 @@ section{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* border: 1px solid rgb(63, 221, 134); */
 }
 
 .skills-content{
     width: 1200px;
     display: flex;
     flex-direction: column;
-
 }
 
 .skills-gallery{
@@ -469,7 +466,6 @@ h3{
 .filter-buttons{
     text-align: center;
     padding: .5rem;
-
 }
 
 .filter-buttons button{
@@ -500,7 +496,6 @@ h3{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* border: 1px solid rgb(63, 221, 134); */
 }
 
 
@@ -509,7 +504,6 @@ h3{
     height: 600px;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid purple; */
 }
 
 .heading-text{
@@ -517,7 +511,6 @@ h3{
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0px 50px;
-
 }
 
 .about-p{
@@ -563,7 +556,6 @@ color: var(--main-font-color);
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* border: 1px solid rgb(63, 221, 134); */
 }
 
 
@@ -572,7 +564,6 @@ color: var(--main-font-color);
     height: 600px;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid purple; */
 }
 
 .contact-text{
@@ -610,8 +601,6 @@ color: var(--main-font-color);
     position: relative;
     left: 65%;
     bottom: 73%;
-    /* border: 2px solid red; */
-
 }
 
 .contact-social-media a{
@@ -646,7 +635,6 @@ footer{
 /*======================= scroll ============================ */
 #progress{
     position: fixed;
-    /* background: #194eb9; */
     z-index: 1000;
     bottom: 60px;
     right: 10px;
@@ -905,13 +893,10 @@ footer{
 
     .modal-open {
         overflow: hidden;
-        
     }
     .modal-container.active {
-        z-index: 1000; 
+        z-index: 1000;
     }
     body {
         z-index: 1;
     }
-   
-    

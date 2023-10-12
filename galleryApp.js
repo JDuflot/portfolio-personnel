@@ -1,11 +1,14 @@
+// Import the createModal function from an external module
 import createModal from './createModal.js'
+// Call the createModal function to create the modal element
 createModal();
 
-// Global QS
+// Global variables for selecting elements
 const modalableImages = document.querySelectorAll('[data-modal="true"]');
 const modalContainer = document.querySelector('.modal-container');
 const modalTrack = document.querySelector('.modal__image-container');
 const indicatorContainer = document.querySelector('.modal__indicator-container');
+// Variables for managing galleries
 // all galleries shared
 let transitionSpeed;
 let galleries;
@@ -16,6 +19,7 @@ let currentIndex;
 let lastIndex;
 let isMoving = false;
 
+// Class to manage the modal
 class Modal {
     constructor(modal) {
       this.modal = modal;
@@ -54,10 +58,10 @@ class Modal {
       body.classList.remove('modal-open');
     }
   }
-  
+// Create an instance of the Modal class 
   const modal = new Modal(modalContainer);
   
-
+// Function to update the active indicator in the modal
 function showActiveIndicator(){
   modalIndicators.forEach((i) => i.classList.remove('active'));
   switch(currentIndex){
@@ -72,24 +76,22 @@ function showActiveIndicator(){
       break;
   }
 }
-
+// Function to move the image gallery within the modal
 function moveGallery(){
   modalTrack.style.transform = `translateX(${currentIndex * -100}%)`;
   showActiveIndicator();
 }
-
+// Function to add images and indicators to the gallery
 function addImagesAndIndicatorsToGallery(arrayOfImages){
   // add images to Gallery 
   modalTrack.innerHTML = [arrayOfImages[arrayOfImages.length -1],...arrayOfImages, arrayOfImages[0]]
   .map((img) => `<img class="modal__image" src="${img.src}" alt="${img.alt}">`).join('')
   // add indicators to Gallery
   indicatorContainer.innerHTML = arrayOfImages.map((i, index) => `<button class="modal__indicator" data-index="${index}"></button>`).join('');
-  
   // return both for destructuring
   return [[...document.querySelectorAll('.modal__image')], [...document.querySelectorAll('.modal__indicator')]];
-  
 }
-
+// Function to update the gallery when a gallery button is clicked
 function updateGallery(galleryImages){
   [modalImages, modalIndicators] = addImagesAndIndicatorsToGallery(galleryImages);
   currentIndex = 1;
@@ -97,7 +99,7 @@ function updateGallery(galleryImages){
   moveGallery();
 }
 
-// event listeners
+// Event listeners for opening galleries
 function attachOpenGalleryEventListeners(){
   modalableImages.forEach((btn) => {
     btn.addEventListener('mouseenter', () => {
@@ -109,7 +111,7 @@ function attachOpenGalleryEventListeners(){
     })
   })
 }
-
+// Event listeners for navigating between images
 function attachArrowEventListeners(){
   document.querySelectorAll('.modal__arrow').forEach((arrow) => arrow.addEventListener('click', (e) => {
     if(isMoving === true){return};
@@ -119,7 +121,7 @@ function attachArrowEventListeners(){
     moveGallery();
   }))
 }
-
+// Event listeners for clicking on indicators
 function attachIndicatorEventListeners(){
   indicatorContainer.addEventListener('click', (e) => {
     if(e.currentTarget === e.target){return}
@@ -130,7 +132,7 @@ function attachIndicatorEventListeners(){
     moveGallery();
   })
 }
-
+// Event listener for the end of transition (image change)
 function attachTransitionEndListener() {
   modalTrack.addEventListener('transitionend', () => {
     isMoving = false;
@@ -147,19 +149,19 @@ function attachTransitionEndListener() {
     }
   })
 }
-
+// Event listener to close the modal on pressing the Escape key
 window.addEventListener('keyup', (e) => {
   if(e.key === "Escape" && modalContainer.classList.contains('active')){
     modal.closeModal();
   }
 })
 
-
+// Export an async function to initialize the gallery
 export default async function initGallery(endpoint, options) {
     await fetch(endpoint)
     .then((response) => {
       if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('La réponse du réseau n\'était pas valide');
       }
       return response.json();
     })
@@ -174,7 +176,7 @@ export default async function initGallery(endpoint, options) {
       attachTransitionEndListener();
     })
     .catch((error) => {
-      console.error('There has been a problem with your fetch operation:', error);
+      console.error('Cela indique généralement un problème avec votre opération de récupération :', error);
     });
   }
 

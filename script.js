@@ -85,14 +85,14 @@ let section = document.querySelectorAll('section');
 function activeMenu() {
     const currentPosition = window.scrollY + 97;
     
-    // Parcourir les sections pour trouver la première section visible
+   // Iterate through the sections to find the first visible section
     let activeSectionIndex = -1;
     section.forEach((sec, index) => {
         if (currentPosition >= sec.offsetTop) {
             activeSectionIndex = index;
         }
     });
-    // Ajouter la classe "active" à l'élément de menu correspondant
+    // Add the "active" class to the corresponding menu element
     menuLi.forEach((sec) => sec.classList.remove("active"));
     if (activeSectionIndex >= 0) {
         menuLi[activeSectionIndex].classList.add("active");

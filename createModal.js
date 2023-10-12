@@ -29,7 +29,7 @@ export default function createModal(){
         </div>
         
         <div class="modal__image-container">
-        
+
         </div>
       </div>
     </div>
