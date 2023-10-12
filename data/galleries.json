@@ -1,0 +1,78 @@
+[
+    {
+      "name" : "Louer",
+      "images" : [
+        {
+            "src": "./images/louer/LS_home.png",
+            "alt": "Aperçu Louer Serein Accueil"
+          },
+          {
+            "src": "./images/louer/LS_appt.png",
+            "alt": "Aperçu Louer Serein Appartement"
+          },
+          {
+            "src": "./images/louer/LS_user.png",
+            "alt": "Aperçu Louer Serein profil utilisateur"
+          },
+          {
+            "src": "./images/louer/LS_user-edit.png",
+            "alt": "Aperçu Louer Serein éditer un logement"
+          }
+      ]
+    },
+    {
+      "name" : "Jeux",
+      "images" : [
+          {
+            "src": "./images/jeux/Jeux&cie_home.png",
+            "alt": "Aperçu Jeux & cie page d'accueil"
+          },
+          {
+            "src": "./images/jeux/Jeux&cie_home2.png",
+            "alt": "Aperçu Jeux & cie page d'accueil"
+          },
+          {
+            "src": "./images/jeux/Jeux&cie_cat.png",
+            "alt": "Aperçu Jeux & cie trier par catégorie"
+          }
+      ]
+    },
+    {
+      "name" : "Portfolio",
+      "images" : [
+          {
+            "src": "./images/portfolio/portfolio.png",
+            "alt": "Aperçu portfolio page d'accueil"
+          },
+          {
+            "src": "./images/portfolio/portfolio_projects.png",
+            "alt": "Aperçu portfolio projets"
+          },
+          {
+            "src": "./images/portfolio/portfolio_projects-tab.png",
+            "alt": "Aperçu tablette portfolio projets"
+          }
+      ]
+    },
+    {
+      "name" : "Shifumi",
+      "images" : [
+          {
+            "src": "./images/shifumi/shifumi_empty.png",
+            "alt": "Aperçu Shifumi page d'accueil"
+          },
+          {
+            "src": "./images/shifumi/shifumi_egality.png",
+            "alt": "Aperçu Shifumi jeu égalité"
+          },
+          {
+            "src": "./images/shifumi/shifumi_winner.png",
+            "alt": "Aperçu Shifumi jeu gagné"
+          },
+          {
+            "src": "./images/shifumi/shifumi_loser.png",
+            "alt": "Aperçu Shifumi jeu perdu"
+          }
+      ]
+    }
+  ]
